@@ -12,14 +12,15 @@
     
     
     <item>
-      <title>The Ultimate Guide to Proxy Services for your Bots and Scraping (Residential vs. Backconnect vs. Datacenter, and Exclusive vs. Shared Proxies)</title>
+      <title>How to choose the right proxy service for your bots and scraping (Residential vs. Backconnect vs. Datacenter, and Exclusive vs. Shared proxies)</title>
       <link>/posts/proxies/</link>
       <pubDate>Sun, 26 May 2019 00:00:00 +0000</pubDate>
       
       <guid>/posts/proxies/</guid>
       <description>This short guide will tell you everything you need to know to choose the right proxy provider for the bots/scraping software you are programming.
 If you already know everything about what you need, you can scroll to the bottom to skip to my recommendations (Luminati for residential backconnect proxies and ProxyRack for dedicated and shared datacenter proxies).
-I know a lot about scraping and proxies. I’m a geek who loves working with data, and the internet has a lot of data.</description>
+(Yeah, we aren&amp;rsquo;t going to cover basic stuff like this.)
+I know a lot about scraping and proxies.</description>
     </item>
     
   </channel>
