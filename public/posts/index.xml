@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Bulletproof Coding</title>
+    <link>/posts/</link>
+    <description>Recent content in Posts on Bulletproof Coding</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 26 May 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The Ultimate Guide to Proxy Services for your Bots and Scraping (Residential vs. Backconnect vs. Datacenter, and Exclusive vs. Shared Proxies)</title>
+      <link>/posts/proxies/</link>
+      <pubDate>Sun, 26 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/proxies/</guid>
+      <description>This short guide will tell you everything you need to know to choose the right proxy provider for the bots/scraping software you are programming.
+If you already know everything about what you need, you can scroll to the bottom to skip to my recommendations (Luminati for residential backconnect proxies and ProxyRack for dedicated and shared datacenter proxies).
+I know a lot about scraping and proxies. I’m a geek who loves working with data, and the internet has a lot of data.</description>
+    </item>
+    
+  </channel>
+</rss>
