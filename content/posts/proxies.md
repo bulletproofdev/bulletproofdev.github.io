@@ -1,0 +1,116 @@
++++
+title = "The Ultimate Guide to Proxy Services for your Bots and Scraping (Residential vs. Backconnect vs. Datacenter, and Exclusive vs. Shared Proxies)"
+date = "2019-05-26"
+description = "Everything you need to know to choose the right proxy provider for the bots/scraping software you are programming."
++++
+
+This short guide will tell you everything you need to know to choose the right proxy provider for the bots/scraping software you are programming.
+
+If you already know everything about what you need, you can scroll to the bottom to skip to my recommendations ([Luminati](https://luminati.io/?affiliate=ref_5c9b0af78fcb5320de4b337d) for *residential backconnect proxies* and [ProxyRack](https://www.proxyrack.com/access/aff/go/cgarvie1) for *dedicated* and *shared* *datacenter proxies*).
+
+
+# I know _a lot_ about scraping and proxies.
+
+I’m a geek who loves working with data, and the internet has a lot of data. As a result, I’ve been writing custom scraping tools for over 10 years. Some of these tools have turned into profitable businesses, with the software making millions of web requests per hour, deployed over a dozen bare metal servers or, at other times, in the cloud.
+
+This required learning a lot about proxies. I’ve gotten my hands dirty and I’m happy to share what I’ve learned with you.
+
+
+# Do I have to pay for proxies?
+
+Yes. Tor is slow and constantly blocked. Freely available proxies are equally terrible. Put your free proxy scraper away.
+
+# Exclusive/dedicated proxies vs. shared proxies
+
+These terms generally refer to datacenter proxies, as residential and mobile backconnect proxies are pretty much always shared (although, importantly, not necessarily shared simultaneously).
+
+Datacenter proxies are not an option if you are going to be doing heavy scraping of a small number of target websites. This is because you are dealing with a finite number of static IPs, which means you’ll have to rate limit yourself or deal with bans. Dedicated datacenter proxies will typically run you around a dollar each, while for a few dozen dollars you could get effectively hundreds of thousands of shared residential proxies per day. 
+
+Dedicated datacenter proxies would be ideal, for example, for crawling the internet.
+
+Dedicated proxies (which refers to the fact that the public IPs are exclusively yours to use during the billing period), are better if you will actually fully utilize the bandwidth and throughput that your proxies can handle, or if your money is more plentiful than your patience to wait for load times and solve captchas
+
+Shared proxies are better if you want to save money or get a higher number of public IPs for the same cost.
+
+In other words, shared proxies would be ideal, for example, for crawling the internet slowly on a budget.
+
+# What are Residential/mobile backconnect proxies?
+
+Basically, when you access a website, the webserver can look your IP address up in, essentially, the internet yellow pages, and see which Organization your IP belongs to. If it belongs to a datacenter, lots of webservers will deny your request, because they want to serve users, not bots. On the other hand, if it belongs to Verizon or Comcast, etc., they will be happy to welcome your traffic to their webserver.
+
+So, we use Residential or Mobile proxies, which route our traffic through computers and phones around the world (or the country or city or ISP of our choice). Other benefits over datacenter proxies include: dynamic/rotating IPs mean that at least 90% of the proxies you change their IPs, giving you 10% new IPs every hour. So paying for 200k IPs will probably give you around 430k per day. It’s back-of-napkin math, but you get the point. On the other hand, the main advantage in favor of datacenter proxies is that datacenters have faster internet connections than people’s homes and phones.
+
+The main non-obvious difference between Residential and Mobile proxies is that mobile proxies are going to be much more expensive (at least double) on a per-bandwidth basis. They will be slower too. The main reason you might use them is simply that you absolutely need to pretend you are on a phone using 3G/4G/5G/XG.
+
+I’m not really sure what “backconnect” originally meant, but to me, it has a very shady connotation. And, frankly, that’s probably what was originally meant. See, most residential and mobile proxy services, and all of the original ones for the first 5 years, were mostly a way to monetize malware installs. Unsuspecting malware-laden machines were redirecting your traffic and your subscription fee was going to, well, a criminal, probably in Russia. I’m not a lawyer, and this isn’t legal advice, but even knowingly using these services could probably constitute breaking extremely serious computer crime laws, which, at least in the US, pretty broadly make it very illegal to access other machines without permission.
+
+However, for most scraping, your only realistic option is to use residential proxies. 
+
+So…
+
+If you don’t want to break the law, or expose your business to criminal liability, your only option is to use a backconnect residential proxy service that is operating fully legally. 
+
+You can count these companies on one hand, and one of them has a proxy pool that’s 10+ times larger than their largest competitor, despite them having pretty much the same prices.
+
+# Questions to Ask a Proxy Provider Before Paying
+
+## Are these residential/backconnect, mobile, or datacenter?
+
+If you don’t know why this matters, re-read everything I wrote above!
+
+## Do they support socks or only http?
+
+Make sure this matches up with your program and needs. There is no difference between a HTTP proxy and an HTTPS proxy, as all proxies used these days will support both protocols/ports. The difference between an HTTP proxy and a SOCKS proxy is that a SOCKS proxy will tunnel all TCP traffic (but not UDP). One advantage of this is that you can proxy DNS traffic. Generally though, this is getting esoteric, and HTTP will suffice. With a properly configured HTTP(S) proxy, and if you take all other needed precautions, target webservers cannot tell you are using a proxy. By “other needed precautions” I am referring to the massive rabbit hole that is browser fingerprinting, WebRTC leaks (whoops, that’s UDP traffic!), and more, which is all beyond the scope of this article.
+
+## Do I have control over when my IP switches?
+
+When you hit a captcha or get a “forbidden” error or a cloudflare page, you’ll probably want to switch your IP.
+
+Common schemes:
+- Your port gets a new IP every x minutes (this might not work for your scaling needs)
+- You hit a URL or send a specific request to get a new IP.
+- You get direct access with a ip:port assigned for every live IP that’s up
+
+## When they say they have 2,000,000 IPs live right now and that they have USA proxies, ask them how many of the 2,000,000 are actually US proxies. 
+
+Most are RU/CN/TH/VN/BR/etc. By the way, if they have a disproportionate amount of proxies from the countries I just listed, you are probably about to send your money to cybercriminals. That’s a malware botnet. 
+
+## Ask them what percent of IP turnover they have per hour. 
+
+10% per hour is a decent estimate. So 200k online will mean 430k per day or so.
+
+## Any blocked functionality?
+
+Most providers block some ports and even domains/hostnames, to prevent stuff, for example email spam (SMTP port 25 and maybe hostnames: gmail.com, etc) , or to keep IP health high (block google, recaptcha, etc.).
+
+## Do they use user:pass authentication or IP whitelisting or another method of authentication?
+
+User:pass authentication can complicate your botting in some circumstances. For example, bizarrely, the latest chromedriver versions currently don’t natively support it. There is a workaround whereby you dynamically create a chrome plugin which you load into the browser, but note there will be some side effects of this, most importantly that chrome extensions are not currently supported when running chromedriver in headless mode. (If you don’t know what Selenium or Chromedriver are, then ignore this tip.)
+
+# How to test a provider during a trial period
+
+Many proxy providers offer a paid trial period which lasts anywhere from a few minutes to a day.
+
+## Latency
+
+Some proxy providers will be borderline un-usable (The cheap, shady-seeming ones). Others (Luminati) have residential backconnect IPs that seem as fast as datacenter proxies
+
+## IP health
+
+Easy test: go to google and try to make searches. See how often you get recaptcha’d or just outright blocked. Cheap but harder test is running your requests through something like ipqualityscore.com
+
+Hit ipinfo.io/json and check the organization to see if it’s a server rental company. You may not be getting the residential IPs you are looking for, and if you need to look like a human that could be a real problem. Many residential proxies being sold will actually be 15%+ datacenter IPs.
+
+## Concurrent threads
+
+Run it! See if their intermediary proxy balancer can handle (and, more importantly, will allow) the throughput/concurrent connections you intend to deliver.
+
+# Finally, my proxy recommendations:
+
+# The best datacenter proxy provider: [ProxyRack](https://www.proxyrack.com/access/aff/go/cgarvie1)
+
+# The best residential and mobile proxy provider (backconnect proxies): [Luminati](https://luminati.io/?affiliate=ref_5c9b0af78fcb5320de4b337d)
+
+I have chosen to use affiliate links in this article in order to help compensate me for the time I have spent writing this article. However, they haven't biased my recomendations. Almost all proxy providers provide pretty comparable affiliate programs, so I have very little financial incentive to give any recommendation other than my honest one. I use both of the above recommended proxy providers as my primary providers.
+
+Feel free to shop around, but you won't be able to find datacenter proxies significantly cheaper than ProxyRack. Quite simply, it's a competitive market and the prices have asymptoted at the underlying costs already. As far as residential proxies are concerned, there are only about 4 serious and legal vendors in the world. Three of them have identical pricing, with the fourth being significantly cheaper but completely inept from an engineering perspective. I could rant for days about their failures. The proxies are at times completely unusable. So I simply can not recommend them. Luminati also has 10 times the proxies available than the second largest provider. So basically, one of the four companies sucks, so there's really only three, and those three have the same pricing but Luminati has 10 times the proxies and amazing tooling. Hence my recommendation.
